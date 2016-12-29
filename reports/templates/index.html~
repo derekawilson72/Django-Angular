@@ -1,0 +1,20 @@
+<h2>  {{ resp  }} </h2>
+
+{% if latest_report_list %}
+<ul>
+  {% for report in latest_report_list %}
+  
+  <li><a href="/genreport/{{ report[0].id }}/">{{ report[0].report_text }}</a></li>
+  <ul>
+  {% for portfolio in report[1] %}
+  <li>
+    {{portfolio}}
+  </li>
+  
+  {% endfor %}
+  </ul>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No reports are available.</p>
+{% endif %}

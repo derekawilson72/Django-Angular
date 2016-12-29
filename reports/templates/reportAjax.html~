@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <script src="{% static 'javascript/angular-1.5.0/angular.js' %}"></script>
+    <script src="{% static 'javascript/script.js' %}"></script>
+  </head>
+<body ng-app="mainModule"  >
+  <h2>  {{ resp  }} </h2>
+  <div ng-controller="mainController">
+    <strong>First name:</strong>{% verbatim %} {{personInstance.firstName}} {% endverbatim %}  <br />
+  </div>
+  
+</body>
+</html>

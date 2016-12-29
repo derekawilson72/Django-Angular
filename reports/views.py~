@@ -1,0 +1,25 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from openModels import viewFunctions_01
+# Create your views here.
+
+def index(request):
+    
+    templateResults=viewFunctions_01.reportIndex(request)
+    return templateResults
+
+    
+
+
+def detail(request, report_id):
+
+    resp=viewFunctions_01.getDetail(request, report_id)
+    return resp 
+
+def results(request, report_id):
+    response = "You're looking at the results of report %s."%(report_id)
+    return HttpResponse(response )
+
+def portfolio(request, report_id):
+    response = "You're seeing portfolios on report %s." % report_id
+    return HttpResponse(response)

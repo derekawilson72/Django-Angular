@@ -1,0 +1,6 @@
+##Run this in the django shell to query results and test new features
+from genreport.models import Report, Portfolio
+
+allReports=Report.objects.all()
+
+rep1=Report.objects.get(id=1)  #get a report
